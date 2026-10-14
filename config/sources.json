@@ -1,0 +1,22 @@
+[
+  {"_id": "bbc-world", "url": "https://feeds.bbci.co.uk/news/world/rss.xml", "title": "BBC News, World", "publisher": "BBC", "tags": ["world", "broadcaster"], "status": "review", "terms": "BBC terms forbid computer analysis of feed content without permission (survey 2026-10-14); not polled until Anselm decides"},
+  {"_id": "abc-au-justin", "url": "https://www.abc.net.au/news/feed/51120/rss.xml", "title": "ABC News Australia, Just In", "publisher": "ABC Australia", "tags": ["world", "broadcaster", "australia"]},
+  {"_id": "npr-world", "url": "https://feeds.npr.org/1004/rss.xml", "title": "NPR World", "publisher": "NPR", "tags": ["world", "broadcaster", "us"]},
+  {"_id": "npr-news", "url": "https://feeds.npr.org/1001/rss.xml", "title": "NPR News", "publisher": "NPR", "tags": ["news", "broadcaster", "us"]},
+  {"_id": "dw-top", "url": "https://rss.dw.com/rdf/rss-en-top", "title": "DW Top Stories", "publisher": "Deutsche Welle", "tags": ["world", "broadcaster", "europe"], "note": "RSS 1.0 RDF"},
+  {"_id": "dw-all", "url": "https://rss.dw.com/rdf/rss-en-all", "title": "DW All", "publisher": "Deutsche Welle", "tags": ["world", "broadcaster", "europe"], "note": "RSS 1.0 RDF, ~140 items"},
+  {"_id": "nyt-world", "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml", "title": "New York Times, World", "publisher": "The New York Times", "tags": ["world", "newspaper", "us"], "status": "review", "terms": "NYT RSS terms allow personal non-commercial use only; commercial or machine use needs written permission (survey 2026-10-14)"},
+  {"_id": "aljazeera", "url": "https://www.aljazeera.com/xml/rss/all.xml", "title": "Al Jazeera English", "publisher": "Al Jazeera", "tags": ["world", "broadcaster", "middle-east"], "terms": "terms not fetched"},
+  {"_id": "guardian-world", "url": "https://www.theguardian.com/world/rss", "title": "The Guardian, World", "publisher": "The Guardian", "tags": ["world", "newspaper", "uk"], "terms": "feed public; the Open Platform developer key is non-commercial, 1 call/s, 500/day"},
+  {"_id": "un-news", "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml", "title": "UN News", "publisher": "United Nations", "tags": ["world", "institution"]},
+  {"_id": "reliefweb", "url": "https://reliefweb.int/updates/rss.xml", "title": "ReliefWeb updates", "publisher": "OCHA", "tags": ["humanitarian", "institution"]},
+  {"_id": "govuk-news", "url": "https://www.gov.uk/search/news-and-communications.atom", "title": "GOV.UK news and communications", "publisher": "UK Government", "tags": ["government", "uk"], "note": "Atom"},
+  {"_id": "nature", "url": "https://www.nature.com/nature.rss", "title": "Nature", "publisher": "Springer Nature", "tags": ["science"], "note": "RSS 1.0 RDF"},
+  {"_id": "science-news", "url": "https://www.science.org/rss/news_current.xml", "title": "Science news", "publisher": "AAAS", "tags": ["science"], "note": "RSS 1.0 RDF"},
+  {"_id": "quanta", "url": "https://www.quantamagazine.org/feed/", "title": "Quanta Magazine", "publisher": "Simons Foundation", "tags": ["science", "essay"]},
+  {"_id": "gcaptain", "url": "https://gcaptain.com/feed/", "title": "gCaptain", "publisher": "gCaptain", "tags": ["marine", "shipping"]},
+  {"_id": "war-on-the-rocks", "url": "https://warontherocks.com/feed/", "title": "War on the Rocks", "publisher": "War on the Rocks", "tags": ["geopolitics", "essay"]},
+  {"_id": "arxiv-cs-cl", "url": "https://rss.arxiv.org/rss/cs.CL", "title": "arXiv cs.CL", "publisher": "arXiv", "tags": ["science", "preprints"], "status": "paused", "note": "daily at midnight ET; 600+ items a day, far more than the analysis budget; metadata CC0", "terms": "one request every three seconds; e-prints must not be re-served"},
+  {"_id": "hn-frontpage", "url": "https://hnrss.org/frontpage", "title": "Hacker News front page", "publisher": "hnrss.org (third party)", "tags": ["tech", "links"], "status": "paused", "note": "titles and links only; the linked pages are arbitrary sites"},
+  {"_id": "wikipedia-current-events", "url": "https://en.wikipedia.org/w/api.php?action=parse&page=Portal:Current_events&prop=wikitext&format=json", "title": "Wikipedia Current events", "publisher": "Wikimedia", "tags": ["world", "digest"], "status": "paused", "note": "not a feed; a discovery source for later (survey 2026-10-14)"}
+]

@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@theme {
+  --color-paper: oklch(0.985 0.004 90);
+  --color-ink: oklch(0.22 0.01 260);
+  --color-dim: oklch(0.52 0.015 260);
+  --color-panel: oklch(0.955 0.005 90);
+  --color-line: oklch(0.88 0.006 90);
+  --color-brand: oklch(0.52 0.1 175);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: oklch(0.17 0.008 260);
+    --color-ink: oklch(0.92 0.006 90);
+    --color-dim: oklch(0.62 0.012 260);
+    --color-panel: oklch(0.22 0.01 260);
+    --color-line: oklch(0.3 0.01 260);
+    --color-brand: oklch(0.72 0.1 175);
+  }
+}
+html { font-family: var(--font-sans); }
+.num { font-variant-numeric: tabular-nums; font-family: var(--font-mono); }
+.chip { @apply inline-block rounded-[3px] px-1.5 py-0.5 text-[11px] leading-4 bg-panel text-dim; }
+.chip.on { @apply bg-brand text-paper; }
+.btn { @apply rounded-[3px] px-2 py-1 text-xs bg-panel text-ink hover:text-brand; }
+a { @apply text-inherit; }
+.prose-notes h1 { @apply text-lg font-semibold mt-6 mb-2; } .prose-notes h2 { @apply text-base font-semibold mt-5 mb-1; } .prose-notes h3 { @apply text-sm font-semibold mt-4 mb-1; }
+.prose-notes p, .prose-notes li { @apply text-sm leading-6; } .prose-notes ul { @apply list-disc pl-5 my-2; } .prose-notes ol { @apply list-decimal pl-5 my-2; }
+.prose-notes a { @apply text-brand underline; } .prose-notes code { @apply font-mono text-[12px] bg-panel px-1 rounded-[2px]; } .prose-notes pre { @apply bg-panel p-2 rounded-[3px] overflow-x-auto text-[12px] my-2; }
+.prose-notes table { @apply text-xs my-2; } .prose-notes th, .prose-notes td { @apply border border-line px-1.5 py-0.5 align-top; }
+.prose-notes blockquote { @apply border-l-2 border-line pl-3 text-dim; }

@@ -1,6 +1,6 @@
 name = "ontology-scraper"
 horizon = "2026"
-repo = ""
+repo = "anselm/ontology-scraper"
 code = "local"
 deploy = "none"
 status = "active"        # active | parked (struck through on the dashboard) | archived (hidden)

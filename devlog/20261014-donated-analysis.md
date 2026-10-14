@@ -67,3 +67,10 @@ once the account is funded: the model costs ten cents an article at Opus
 rates; the session's value is adjudication (merges, hierarchy, component
 proposals) more than bulk, and the induction pass is where it should be
 pointed next.
+
+Seen in the first merged data: "Russia" exists twice, once as a place
+(the country) and once as an agent (the state that acts), because the
+resolver only matches within a top kind. Countries, cities and companies
+act as well as sit somewhere; the next resolver change should let an agent
+mention link to a place entity of the same name when that place is a
+polity, giving it an `agency` component rather than a second identity.

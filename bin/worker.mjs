@@ -10,8 +10,10 @@ async function analyzedToday() { return analyses.count({ at: { $gte: new Date(Da
 async function tick() {
   const t0 = Date.now(); const r = await inhale.poll({ log }); if (r.polled) log(`polled ${r.polled} sources, ${r.added} new items`);
   let n = 0; while (n < 40 && (await inhale.extractOne(log))) n++;
-  let used = await analyzedToday(), a = 0; while (used + a < BUDGET && a < 40 && (await analyzeOne(log))) a++; if (used + a >= BUDGET) log(`analysis budget reached (${BUDGET}/day)`);
-  let rs = 0; while (rs < 60 && (await resolveOne(log))) rs++;
+  // resolve follows each analysis at once, so entities appear on the site within a minute of a read rather than after a batch;
+  // the per-tick cap keeps link, embed and induction getting their turn while analysis (about 40 s each) is the slow step
+  let used = await analyzedToday(), a = 0, rs = 0; while (rs < 60 && (await resolveOne(log))) rs++;
+  while (used + a < BUDGET && a < 8 && (await analyzeOne(log))) { a++; while (await resolveOne(log)) rs++; } if (used + a >= BUDGET) log(`analysis budget reached (${BUDGET}/day)`);
   let l = 0; while (l < 30 && (await linkOne(log))) l++;
   let e = 0; while (e < 4 && (await embedBatch(32, log))) e++;
   const ind = await induce.maybeRun(log);

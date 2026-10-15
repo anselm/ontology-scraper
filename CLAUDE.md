@@ -49,6 +49,7 @@ refactoring over time. Live on exe.dev VM `ontology-monster`; domain
   the socket; run with the sandbox off).
 - Sources whose terms forbid machine reading (BBC, NYT) are seeded with
   `status: review` and not polled. Bodies are stored, never served.
-- DNS for ontology.monster is not yet set (Cloudflare zone token expired
-  2026-09-30): root CNAME, grey cloud, flattened, to
-  `ontology-monster.exe.xyz`, plus `www`; exe.dev domain-add is done.
+- ontology.monster and www are live (2026-10-14): grey-cloud CNAMEs to
+  `ontology-monster.exe.xyz`, registered with exe.dev. Rebind or add a
+  domain with `~/projects/2027/harness/bin/exe-domain <vm> <domain>` on canada1. See
+  `deploy/DEPLOYMENT.md` and `devlog/20261014-domain-live.md`.

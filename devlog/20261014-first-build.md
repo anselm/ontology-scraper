@@ -22,7 +22,8 @@ run and looked at, not planned.
   desktop and phone widths.
 - **Live**: https://ontology-monster.exe.xyz, VM `ontology-monster`, docker
   mongo, units `ontology-server` and `ontology-worker`, manual deploy.
-  `ssh exe.dev domain add` done for ontology.monster and www.
+  `ssh exe.dev domain add` done for ontology.monster and www. (It had not
+  taken; redone after DNS, see `20261014-domain-live.md`.)
 
 ## First results
 
@@ -75,7 +76,7 @@ spine with the surface verb kept.
 - Cloudflare DNS for ontology.monster: root CNAME, grey cloud, flattened,
   to `ontology-monster.exe.xyz`, and `www` the same. The zone token in
   `~/.config/cf/token` expired 2026-09-30, so this needs a fresh token or
-  his hand.
+  his hand. Resolved the same evening: `20261014-domain-live.md`.
 - Whether the bulk analysis runs on Opus 5.5 (default, ~$10 a day at the
   budget) or Haiku 5.5.
 - Whether to fund the Anthropic account; until then OpenRouter carries it.

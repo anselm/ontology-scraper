@@ -3,3 +3,4 @@ dist/
 .env
 public/maplibre/
 chores/
+data/ne/

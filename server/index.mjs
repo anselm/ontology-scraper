@@ -6,7 +6,7 @@ import { join } from "node:path"; import { existsSync, readFileSync } from "node
 const PORT = Number(process.env.PORT || 8100), HOST = process.env.HOST || "0.0.0.0";
 const app = Fastify({ logger: false, bodyLimit: 64 * 1024 });
 const H = {
-  "stats": () => svc.stats(), "bounds": () => svc.bounds(), "located": (p) => svc.located(p), "graph": (p) => svc.graph(p), "entity": (p) => svc.get(p), "search": (p) => svc.search(p), "recent": (p) => svc.recent(p),
+  "stats": () => svc.stats(), "bounds": () => svc.bounds(), "located": (p) => svc.located(p), "extents": (p) => svc.extents(p), "lines": (p) => svc.lines(p), "graph": (p) => svc.graph(p), "entity": (p) => svc.get(p), "search": (p) => svc.search(p), "recent": (p) => svc.recent(p),
   "prototypes": () => svc.prototypes(), "prototype": (p) => svc.prototype(p), "components": () => svc.componentList(),
   "sources": () => svc.sourceList(), "pipeline": () => svc.pipeline(), "analysis": (p) => svc.analysis(p),
   "hit": (p) => svc.hit(p?.page || ""),

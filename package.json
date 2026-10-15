@@ -1,6 +1,7 @@
 {
   "name": "ontology-scraper",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "version": "0.1.0",
   "description": "Reads the news, finds the things it is about, discovers what kinds of things they are and what parts those kinds share. ontology.monster",

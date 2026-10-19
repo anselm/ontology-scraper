@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="none" stroke="#2f7a6b" stroke-width="2.5"/><circle cx="16" cy="16" r="3.5" fill="#2f7a6b"/><circle cx="24" cy="9" r="2.5" fill="#2f7a6b"/><circle cx="8" cy="22" r="2.5" fill="#2f7a6b"/><path d="M16 16 L24 9 M16 16 L8 22" stroke="#2f7a6b" stroke-width="1.5"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="the ontology monster: a squat three-eyed creature wearing a small graph as a crown">
+  <defs><style>.b{fill:#2f7a6b}.l{fill:none;stroke:#2f7a6b;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}</style></defs>
+  <!-- the crown: three kinds, joined -->
+  <path class="l" d="M64 46 L100 30 L136 46 M64 46 L136 46 M100 30 L100 66 M64 46 L82 70 M136 46 L118 70"/>
+  <circle class="b" cx="64" cy="46" r="9"/><circle class="b" cx="100" cy="30" r="10"/><circle class="b" cx="136" cy="46" r="9"/>
+  <!-- body: wide and low, one lump off-centre -->
+  <path class="b" d="M100 62c-34 0-62 14-66 44-2 16 2 32 8 44 4 8 10 12 20 12h76c10 0 16-4 20-12 6-12 12-30 8-48-5-28-32-40-66-40z"/>
+  <!-- feet -->
+  <ellipse class="b" cx="74" cy="166" rx="16" ry="7"/><ellipse class="b" cx="126" cy="166" rx="16" ry="7"/>
+  <!-- three eyes, each looking somewhere else -->
+  <circle cx="66" cy="104" r="13" fill="#fff"/><circle cx="100" cy="98" r="15" fill="#fff"/><circle cx="134" cy="104" r="13" fill="#fff"/>
+  <circle cx="62" cy="106" r="6" fill="#1b1f23"/><circle cx="101" cy="97" r="7" fill="#1b1f23"/><circle cx="138" cy="102" r="6" fill="#1b1f23"/>
+  <circle cx="60" cy="104" r="2" fill="#fff"/><circle cx="99" cy="95" r="2.5" fill="#fff"/><circle cx="136" cy="100" r="2" fill="#fff"/>
+  <!-- mouth: a flat, considering line with one tooth -->
+  <path d="M78 134h44" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M108 134l4 8 4-8z" fill="#fff"/>
+</svg>

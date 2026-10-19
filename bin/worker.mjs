@@ -6,7 +6,7 @@ import "../lib/env.mjs"; import { seedAll } from "../lib/sources/seed.mjs"; impo
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; }; const once = process.argv.includes("--once");
 const INTERVAL = Number(arg("--interval-s", process.env.WORKER_INTERVAL_S || 60)), BUDGET = Number(arg("--budget", process.env.ANALYZE_BUDGET || 100));
 const log = (s) => console.log(new Date().toISOString().slice(11, 19), s);
-async function analyzedToday() { return analyses.count({ at: { $gte: new Date(Date.now() - 864e5) } }); }
+async function analyzedToday() { return analyses.count({ at: { $gte: new Date(Date.now() - 864e5) }, contributed: { $ne: true } }); } // donated analyses are free and do not use the budget
 async function tick() {
   const t0 = Date.now(); const r = await inhale.poll({ log }); if (r.polled) log(`polled ${r.polled} sources, ${r.added} new items`);
   let n = 0; while (n < 40 && (await inhale.extractOne(log))) n++;

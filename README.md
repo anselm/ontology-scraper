@@ -56,6 +56,7 @@ Deploy is manual and documented in `deploy/DEPLOYMENT.md`. Push is not deploy.
 
 ## Reading further
 
+- The guiding light is Jessica Talisman's *Ontology Pipeline: A framework for building knowledge infrastructures* (Technics Publications; [ontologypipeline.com](https://www.ontologypipeline.com/), [publisher](https://technicspub.com/ontology-pipeline)). Its sequence, controlled vocabulary to metadata to taxonomy to thesaurus to ontology to knowledge graph, is the sequence the phases here follow; `devlog/20261014-survey-ontology.md` maps the stages onto the modules.
 - `devlog/` is the working log, dated entries, newest last. The 2026-10-14 entries include three literature surveys (aggregation, extraction, ontology) and the architecture decisions. Read the tail first.
 - `devlog/20261014-architecture.md` has the data model and module map.
 - Continues [saltspring-ontology](https://github.com/anselm/saltspring-ontology) at world scale and takes its component model from [social-knowledge-service](https://github.com/anselm/social-knowledge-service).

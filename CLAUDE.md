@@ -28,11 +28,14 @@ refactoring over time. Live on exe.dev VM `ontology-monster`; domain
 
 - Models, in tier order: Anthropic SDK (`ANTHROPIC_API_KEY`; the account had
   no credits on 2026-10-14, so the tier retires itself on a billing error),
-  OpenRouter (`OPENROUTER_API_KEY`, default `anthropic/claude-opus-5.5`),
-  local ollama (`gpt-oss:20b`, canada1 only). Per-phase override via
-  `MODEL_<PHASE>` / `OPENROUTER_MODEL_<PHASE>`. `ANALYZE_BUDGET` documents a
-  day (default 100). Measured 2026-10-14: about 5.7k in + 3.6k out tokens per
-  article on Opus 5.5 through OpenRouter.
+  OpenRouter (`OPENROUTER_API_KEY`), local ollama (`gpt-oss:20b`, canada1
+  only). Since 2026-10-19 the bulk phases run on haiku 5.5
+  (`OPENROUTER_MODEL_ANALYZE`, `OPENROUTER_MODEL_JUDGE`) with sonnet 5.5 as
+  the second-attempt fallback and opus 5.5 for induction; the measurement
+  behind that is `devlog/20261019-cost-pass.md`. `ANALYZE_BUDGET` documents
+  a day (400 on the VM). A 402/429 from OpenRouter pauses the tier and
+  releases the claim; `bin/unfail.mjs analyze` revives documents that were
+  failed by billing before that fix.
 - Mongo: `ontology` database; locally the hustles docker mongo on :27017, on
   the VM a docker mongo bound to localhost. `lib/store.mjs` is the only
   module touching it.

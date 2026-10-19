@@ -9,6 +9,9 @@
 {#if d}
   <div class="mt-4 flex flex-wrap gap-1 text-[11px]">{#each Object.entries(d.counts) as [k, v]}<span class="chip num">{k} {v}</span>{/each}</div>
   <table class="mt-3 text-xs"><thead><tr class="text-left text-dim"><th class="pr-3">phase</th>{#each order as s}<th class="num pr-3">{s}</th>{/each}</tr></thead><tbody>{#each Object.entries(d.phases) as [phase, counts]}<tr class="border-t border-line"><td class="num py-1 pr-3">{phase}</td>{#each order as s}<td class="num pr-3 {s === 'failed' && counts[s] ? 'text-red-500' : ''}">{counts[s] || ""}</td>{/each}</tr>{/each}</tbody></table>
+  <h2 class="mt-5 text-sm font-semibold">Spend <span class="font-normal text-dim">model calls for analysis, by day</span></h2>
+  <table class="mt-1 text-xs"><thead><tr class="text-left text-dim"><th class="pr-3">day</th><th class="pr-3">model</th><th class="num pr-3">docs</th><th class="num pr-3">tokens in+out</th><th class="num pr-3">usd</th></tr></thead><tbody>{#each d.spend as r}<tr class="border-t border-line"><td class="num py-0.5 pr-3">{r.day}</td><td class="pr-3">{r.model.replace("openrouter:", "")}</td><td class="num pr-3">{r.docs}</td><td class="num pr-3">{r.in}+{r.out}</td><td class="num pr-3">{r.usd.toFixed(2)}{r.estimated ? "*" : ""}</td></tr>{/each}</tbody></table>
+  {#if d.spend.some((r) => r.estimated)}<p class="mt-1 text-[11px] text-dim">* priced from list rates; calls since 2026-10-19 carry their billed cost.</p>{/if}
   <h2 class="mt-5 text-sm font-semibold">Read most recently</h2>
   <ul class="mt-1 space-y-1 text-sm">{#each d.latest as c}<li><a href={"/doc/" + c.id} class="hover:text-brand">{c.title}</a> <span class="num text-xs text-dim">{c.source} · {day(c.published)} · {c.entities} things</span></li>{/each}</ul>
 {:else}<p class="mt-4 text-sm text-dim">loading</p>{/if}

@@ -36,6 +36,10 @@ refactoring over time. Live on exe.dev VM `ontology-monster`; domain
   a day (400 on the VM). A 402/429 from OpenRouter pauses the tier and
   releases the claim; `bin/unfail.mjs analyze` revives documents that were
   failed by billing before that fix.
+- Induction (`lib/ontology/induce.mjs`) learns relation slots per prototype in the census and proposes
+  both new components and fields for existing ones, dropping repeats. `reference/schema-test/` is the
+  April 2026 precursor kept verbatim (not built, not imported); `bin/eval-induction.mjs` compares the
+  live vocabulary against its hand-made components and prototypes with no model calls.
 - Mongo: `ontology` database; locally the hustles docker mongo on :27017, on
   the VM a docker mongo bound to localhost. `lib/store.mjs` is the only
   module touching it.

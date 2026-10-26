@@ -40,6 +40,10 @@ refactoring over time. Live on exe.dev VM `ontology-monster`; domain
   both new components and fields for existing ones, dropping repeats. `reference/schema-test/` is the
   April 2026 precursor kept verbatim (not built, not imported); `bin/eval-induction.mjs` compares the
   live vocabulary against its hand-made components and prototypes with no model calls.
+- Alerts: `bin/health.mjs` (checks in `lib/health.mjs`: stale present, stalled worker, no intake, billing
+  errors, failure rate, disk, site) runs hourly on the VM from `ontology-health.timer` and pushes problems,
+  all-clears and a daily digest to ntfy topic `NTFY_TOPIC` (anselm-alerts) via `lib/alerts.mjs`; a 402 from
+  OpenRouter pushes at once. Run it by hand with `node bin/health.mjs` (add `--force` to send a digest now).
 - Mongo: `ontology` database; locally the hustles docker mongo on :27017, on
   the VM a docker mongo bound to localhost. `lib/store.mjs` is the only
   module touching it.

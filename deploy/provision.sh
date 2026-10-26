@@ -33,5 +33,30 @@ RestartSec=5
 WantedBy=multi-user.target
 UNIT
 done
-$SSH "$DEST" 'sudo touch /etc/ontology.env && sudo chown exedev:exedev /etc/ontology.env && sudo chmod 600 /etc/ontology.env && sudo systemctl daemon-reload && sudo systemctl enable ontology-server ontology-worker >/dev/null 2>&1'
+echo "› health timer (hourly bin/health.mjs --notify; alerts over ntfy when NTFY_TOPIC is set)"
+$SSH "$DEST" "sudo tee /etc/systemd/system/ontology-health.service >/dev/null" <<UNIT
+[Unit]
+Description=ontology — health check and ntfy alerts
+After=network-online.target docker.service
+
+[Service]
+Type=oneshot
+User=exedev
+WorkingDirectory=/srv/ontology
+EnvironmentFile=/etc/ontology.env
+ExecStart=/usr/bin/node /srv/ontology/bin/health.mjs --notify
+UNIT
+$SSH "$DEST" "sudo tee /etc/systemd/system/ontology-health.timer >/dev/null" <<UNIT
+[Unit]
+Description=ontology — hourly health check
+
+[Timer]
+OnCalendar=hourly
+RandomizedDelaySec=300
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+UNIT
+$SSH "$DEST" 'sudo touch /etc/ontology.env && sudo chown exedev:exedev /etc/ontology.env && sudo chmod 600 /etc/ontology.env && sudo systemctl daemon-reload && sudo systemctl enable ontology-server ontology-worker >/dev/null 2>&1 && sudo systemctl enable --now ontology-health.timer >/dev/null 2>&1'
 echo "✓ provisioned $HOST. Next: deploy/secrets.sh, deploy/deploy.sh, then: ssh exe.dev share port $VM 8100 && ssh exe.dev share set-public $VM"

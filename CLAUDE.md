@@ -40,6 +40,9 @@ refactoring over time. Live on exe.dev VM `ontology-monster`; domain
   both new components and fields for existing ones, dropping repeats. `reference/schema-test/` is the
   April 2026 precursor kept verbatim (not built, not imported); `bin/eval-induction.mjs` compares the
   live vocabulary against its hand-made components and prototypes with no model calls.
+- Spend: every model call is recorded in the `calls` collection by `lib/analyze/llm.mjs` (phase, model, tokens, dollars);
+  the pipeline page and the health digest read it. Induction runs at most every `INDUCE_EVERY_H` hours (6) and not past
+  `SPEND_CAP_USD` (5) a day; its hierarchy pass only sends prototypes not yet reviewed. See `devlog/20261108-unmeasured-induction.md`.
 - Alerts: `bin/health.mjs` (checks in `lib/health.mjs`: stale present, stalled worker, no intake, billing
   errors, failure rate, disk, site) runs hourly on the VM from `ontology-health.timer` and pushes problems,
   all-clears and a daily digest to ntfy topic `NTFY_TOPIC` (anselm-alerts) via `lib/alerts.mjs`; a 402 from

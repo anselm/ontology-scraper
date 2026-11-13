@@ -15,4 +15,4 @@ if (args.has("--notify") || args.has("--force")) {
   if (due && (await notify({ title: `${HOST} daily`, body: h.text, tags: [h.ok ? "newspaper" : "warning"], click }))) s.lastDigest = new Date();
   await state.upsert("health", s);
 }
-await close(); process.exit(h.ok ? 0 : 1);
+await close(); process.exit(h.ok || notify ? 0 : 1); // by hand, a problem is a non-zero exit; under the timer the push is the report, so the unit does not sit in "failed"

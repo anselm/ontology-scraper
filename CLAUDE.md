@@ -67,3 +67,15 @@ refactoring over time. Live on exe.dev VM `ontology-monster`; domain
   `ontology-monster.exe.xyz`, registered with exe.dev. Rebind or add a
   domain with `~/projects/2027/harness/bin/exe-domain <vm> <domain>` on canada1. See
   `deploy/DEPLOYMENT.md` and `devlog/20261014-domain-live.md`.
+
+## In a cloud session (since 2026-11-21)
+
+This repo is worked on in Claude Code cloud sessions, where the harness at
+`~/projects/2026/harness` does not exist. The house skills are installed into
+`.claude/skills/` at session start by the environment's setup script from the
+public repo github.com/anselm/house-skills (gitignored here; the harness stays
+the source). Durable thinking goes in dated `devlog/` entries. Never invent a
+fact, date, URL or title; say "I guessed" when you guessed. Commit often; a
+push is a deploy on several of Anselm's sites, so push only when he says.
+Keys are not in the repo: in the cloud they are network secrets on the
+environment; on the production VM they are in its own .env.

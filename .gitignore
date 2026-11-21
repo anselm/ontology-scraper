@@ -4,3 +4,8 @@ dist/
 public/maplibre/
 chores/
 data/ne/
+
+# installed per session by anselm/house-skills cloud-setup.sh; never committed
+.claude/skills/
+.claude/hooks/
+.claude/settings.json
